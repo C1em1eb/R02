@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 19:12:48 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 20:55:15 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 22:02:34 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,14 @@ char	*ft_get_charnum(int nb)
 		ui = nb * -1;
 	}
 	else
-	{
 		ui = nb;
-	}
 	while (ui > 0)
 	{
 		str_res[i++] = '0' + (ui % 10);
 		ui /= 10;
 	}
 	if (nb != 0)
-	{
 		str_res[i] = '\0';
-	}
 	else
 	{
 		str_res[0] = '0';

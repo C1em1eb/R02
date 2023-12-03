@@ -18,18 +18,13 @@
 #include "libs/ft_get_dict.h"
 #include "libs/ft_handle_record.h"
 
-int	main(int argc, char **argv)
-{
-	char	*n_record;
-	char	*entry_value;
-	int		record;
-	char	***dictionary;
+char	*g_path = "./data/";
 
-	if (argc < 2 || argc > 3)
-	{
-		ft_putstr("Error\n");
-		return (0);
-	}
+char	***get_dict(char *dict_name)
+{
+	char	***dictionary;
+	int		record;
+
 	record = 0;
 	dictionary = (char ***)malloc(sizeof(char **) * 60);
 	while (record < 50)
@@ -39,28 +34,48 @@ int	main(int argc, char **argv)
 		dictionary[record][1] = (char *)malloc(sizeof(char) * 48);
 		record++;
 	}
-	ft_get_dict(DICT, dictionary);
+	ft_get_dict(dict_name, dictionary);
+	return (dictionary);
+}
+
+void	free_dict(char ***dict)
+{
+	int	i;
+
+	i = 0;
+	while (i < 50)
+	{
+		free(dict[i][0]);
+		free(dict[i][1]);
+		i++;
+	}
+	free(dict);
+	dict = NULL;
+}
+
+int	main(int argc, char **args)
+{
+	char	*n_record;
+	char	***dictionary;
+	char	*dict_path;
+
 	if (argc == 2)
 	{
-		n_record = argv[1];
-		matoi(n_record);
-		if (!ft_is_numeric(n_record))
-		{
-			ft_putstr("Error\n");
-			return (0);
-		}
-		ft_handle_record(dictionary, n_record);
+		dict_path = ft_strcat(g_path, DICT);
+		n_record = args[1];
 	}
 	if (argc == 3)
 	{
-		n_record = argv[1];
-		matoi(n_record);
-		entry_value = argv[2];
-		if (!ft_is_numeric(n_record) || !ft_strvalid(entry_value))
-		{
-			ft_putstr("Error\n");
-			return (0);
-		}
+		dict_path = args[1];
+		n_record = args[2];
 	}
-	free(dictionary);
+	dictionary = get_dict(dict_path);
+	matoi(n_record);
+	if (!ft_is_numeric(n_record))
+		ft_putstr("Error\n");
+	ft_handle_record(dictionary, n_record);
+	free_dict(dictionary);
+	if (argc < 2 || argc > 3)
+		ft_putstr("Error\n");
+	return (0);
 }
