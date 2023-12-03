@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chanus <chanus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:20:07 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/02 12:20:10 by chanus           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:52:45 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers.h"
 
-int length(long nb)
+int		length(long nb)
 {
-	int length;
+	int	length;
 
 	length = 0;
 	if (nb < 0)
@@ -30,11 +30,11 @@ int length(long nb)
 	return (length);
 }
 
-char *ft_itoa(int nb)
+char	*ft_itoa(int nb)
 {
-	char *str;
-	long n;
-	int i;
+	char	*str;
+	long	n;
+	int		i;
 
 	n = nb;
 	i = length(n);

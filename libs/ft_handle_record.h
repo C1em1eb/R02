@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:22:03 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 18:38:17 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:02:28 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@
 
 static int	search_record(char ***dictionary, char *n_record);
 
-int	get_num(char s)
+int		get_num(char s)
 {
 	return (s - 48);
 }
 
 void	resolve_group(char *group, char *num_order, char ***dict)
 {
-	int	num;
-	int	i;
-	char aime[3];
+	int		num;
+	int		i;
+	char	aime[3];
 
 	i = 0;
 	while (i < 3)
@@ -41,21 +41,15 @@ void	resolve_group(char *group, char *num_order, char ***dict)
 		num = get_num(group[i]);
 		if (i == 0 && num > 0)
 		{
-			//printf("%d ", num);
 			search_record(dict, ft_get_charnum(num));
 			search_record(dict, "100");
-			//printf("%s ", "100");
 		}
 		else if (i == 1 && num > 1)
 		{
-			//printf("%d ", num * 10);
-			//printf("%s ", ft_get_charnum(num * 10));
 			search_record(dict, ft_get_charnum(num * 10));
 		}
 		else if (i == 1 && num > 0)
 		{
-			/*printf("%c", group[1]);
-			printf("%c ", group[2]);*/
 			aime[0] = group[1];
 			aime[1] = group[2];
 			aime[2] = '\0';
@@ -64,13 +58,11 @@ void	resolve_group(char *group, char *num_order, char ***dict)
 		}
 		else if (i == 2 && num > 0)
 		{
-			/*printf("%d ", num);*/
 			search_record(dict, ft_get_charnum(num));
 		}
 		i++;
 	}
 	search_record(dict, num_order);
-	//printf("%s\n", num_order);
 }
 
 char	*get_num_order(int num_order)
@@ -79,7 +71,6 @@ char	*get_num_order(int num_order)
 	char	*res;
 
 	i = 1;
-
 	if (num_order < 3)
 	{
 		res = (char*) malloc(1);
@@ -112,10 +103,10 @@ void	ft_putchunk(char *chunk)
 
 char	*m_input(char *data, int *t)
 {
-	int	len;
-	int	rem;
-	char *mdata;
-	int i;
+	int		len;
+	int		rem;
+	char	*mdata;
+	int		i;
 
 	len = ft_strlen(data);
 	rem = len % 3;
@@ -149,26 +140,9 @@ char	*m_input(char *data, int *t)
 	return (mdata);
 }
 
-/* static int get_zeros(int nb) // UNUSED
-{
-	int digits;
-	int c;
-	int res;
-
-	c = 1;
-	res = 1;
-	digits = ft_count_digits(nb);
-	while (c < digits)
-	{
-		res *= 10;
-		c++;
-	}
-	return res;
-} */
-
 static int	search_record(char ***dictionary, char *n_record)
 {
-	int record;
+	int	record;
 	record = 0;
 	while (record < 50)
 	{
@@ -192,30 +166,22 @@ void	ft_handle_record(char ***dictionary, char *str_num)
 	int		i;
 	int		t;
 
-	//if(!search_record(dictionary, str_num))
-
-		i = 0;
-		len = ft_strlen(str_num);
-		t = len;
-		m_number = m_input(str_num, &t);
-
-		//ft_putstr(m_number); comment to hide the numbers
-
-		while (i < len)
+	i = 0;
+	len = ft_strlen(str_num);
+	t = len;
+	m_number = m_input(str_num, &t);
+	while (i < len)
+	{
+		c = 0;
+		while (c < 3)
 		{
-			c = 0;
-			while (c < 3)
-			{
-				chunk[c++] = m_number[i++];
-			}
-			chunk[3] = '\0';
-			t -= 3;
-			num_order = get_num_order(t);
-			resolve_group(chunk, num_order, dictionary);
-			free(num_order);
+			chunk[c++] = m_number[i++];
 		}
-	/* else {
-		ft_putstr("Error\n");
-	}*/
+		chunk[3] = '\0';
+		t -= 3;
+		num_order = get_num_order(t);
+		resolve_group(chunk, num_order, dictionary);
+		free(num_order);
+		}
 }
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_numeric.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chanus <chanus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:20:11 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/02 13:21:36 by chanus           ###   ########.fr       */
+/*   Updated: 2023/12/03 19:52:17 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define FT_IS_NUMERIC
 int	ft_is_numeric(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')

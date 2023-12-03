@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chanus <chanus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:43 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/02 17:31:32 by chanus           ###   ########.fr       */
+/*   Updated: 2023/12/03 20:03:24 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 
 #ifndef FT_STRCAT
 #define FT_STRCAT
-char *ft_strcat(char *str1, char *str2)
+
+char	*ft_strcat(char *str1, char *str2)
 {
-	unsigned int str1_size;
-	unsigned int str2_size;
-	unsigned int c;
-	char *res;
+	unsigned int	str1_size;
+	unsigned int	str2_size;
+	unsigned int	c;
+	char			*res;
 
 	str1_size = ft_strlen(str1);
 	str2_size = ft_strlen(str2);
-	res = (char*)malloc((str1_size + str2_size + 1) * sizeof(char));
+	res = (char*) malloc((str1_size + str2_size + 1) * sizeof(char));
 	c = 0;
 	while (*str1 != '\0')
 	{
