@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:22:03 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 20:51:03 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:41:27 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,14 @@ void	resolve_group(char *group, char *num_order, char ***dict)
 			search_record(dict, "100");
 		}
 		else if (i == 1 && num > 1)
-		{
 			search_record(dict, ft_get_charnum(num * 10));
-		}
 		else if (i == 1 && num > 0)
 		{
 			aime[0] = group[1];
 			aime[1] = group[2];
 			aime[2] = '\0';
 			search_record(dict, aime);
-			break;
+			break ;
 		}
 		else if (i == 2 && num > 0)
 		{
@@ -73,11 +71,11 @@ char	*get_num_order(int num_order)
 	i = 1;
 	if (num_order < 3)
 	{
-		res = (char*) malloc(1);
+		res = (char *) malloc(1);
 		res[0] = '\0';
 		return (res);
 	}
-	res = (char*) malloc(num_order + 2);
+	res = (char *) malloc(num_order + 2);
 	res[0] = '1';
 	while (i <= num_order)
 	{
@@ -112,7 +110,7 @@ char	*m_input(char *data, int *t)
 	rem = len % 3;
 	if (rem == 1)
 	{
-		mdata = (char*) malloc(len + 2);
+		mdata = (char *) malloc(len + 2);
 		mdata[0] = '0';
 		mdata[1] = '0';
 		*t += 2;
@@ -125,7 +123,7 @@ char	*m_input(char *data, int *t)
 	}
 	else if (rem == 2)
 	{
-		mdata = (char*) malloc(len + 1);
+		mdata = (char *) malloc(len + 1);
 		mdata[0] = '0';
 		*t += 1;
 		i = 1;

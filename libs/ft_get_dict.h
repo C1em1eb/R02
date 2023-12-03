@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:23:35 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 20:47:00 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:42:07 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_get_dict(char *dict_name, char ***dictionary)
 	fd = open(dictionary_name, O_RDONLY);
 	if (fd == -1)
 	{
-		return;
+		return ;
 	}
 	ret = read(fd, buff, BUFF_SIZE);
 	buff[ret] = '\0';
@@ -61,8 +61,8 @@ void	ft_get_dict(char *dict_name, char ***dictionary)
 	if (close(fd) == -1)
 	{
 		free(dictionary_name);
-		return;
+		return ;
 	}
 	free(dictionary_name);
-	return;
+	return ;
 }
