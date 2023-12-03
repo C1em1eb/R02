@@ -75,6 +75,7 @@ int	main(int argc, char **args)
 		ft_putstr("Error\n");
 	ft_handle_record(dictionary, n_record);
 	free_dict(dictionary);
+	ft_putstr("\n");
 	if (argc < 2 || argc > 3)
 		ft_putstr("Error\n");
 	return (0);
