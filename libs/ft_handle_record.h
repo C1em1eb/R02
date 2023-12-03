@@ -6,7 +6,7 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:22:03 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 21:41:27 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 22:28:43 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "ft_putchar.h"
 # include "ft_putstr.h"
 # include "ft_atoi.h"
-# include "ft_itoa.h"
 # include "ft_count_digits.h"
 # include "ft_get_charnum.h"
 # include "ft_strlen.h"
