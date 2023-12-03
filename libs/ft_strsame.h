@@ -6,12 +6,12 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:27:28 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 19:54:13 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:37:09 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRSAME
-#define FT_STRSAME
+#ifndef FT_STRSAME_H
+# define FT_STRSAME_H
 
 int	ft_strsame(char *s1, char *s2)
 {

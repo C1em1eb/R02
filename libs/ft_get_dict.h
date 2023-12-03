@@ -6,14 +6,14 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:23:35 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 20:02:46 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:47:00 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers.h"
 #include "ft_strcat.h"
 
-char	*path = "./data/";
+char	*g_path = "./data/";
 
 void	ft_get_dict(char *dict_name, char ***dictionary)
 {
@@ -28,7 +28,7 @@ void	ft_get_dict(char *dict_name, char ***dictionary)
 	o = 0;
 	c = 0;
 	row = 0;
-	dictionary_name = ft_strcat(path, dict_name);
+	dictionary_name = ft_strcat(g_path, dict_name);
 	fd = open(dictionary_name, O_RDONLY);
 	if (fd == -1)
 	{

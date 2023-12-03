@@ -6,14 +6,14 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:09:08 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 19:52:52 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:54:10 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers.h"
+#ifndef FT_PUTCHAR_H
+# define FT_PUTCHAR_H
 
-#ifndef FT_PUT_CHAR
-#define FT_PUT_CHAR
+# include "headers.h"
 
 void	ft_putchar(char c)
 {

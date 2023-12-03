@@ -6,11 +6,11 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:19:43 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 20:02:55 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:41:59 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		is_a_number(char c)
+int	is_a_number(char c)
 {
 	if (c >= 48 && c <= 57)
 	{
@@ -35,7 +35,7 @@ void	add_number(char *str, int *res)
 	}
 }
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	unsigned int	minus_counter;
 	int				res;

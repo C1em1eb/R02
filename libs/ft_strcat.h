@@ -6,15 +6,15 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:15:43 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 20:03:24 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:51:35 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers.h"
-#include "ft_strlen.h"
+#ifndef FT_STRCAT_H
+# define FT_STRCAT_H
 
-#ifndef FT_STRCAT
-#define FT_STRCAT
+# include "headers.h"
+# include "ft_strlen.h"
 
 char	*ft_strcat(char *str1, char *str2)
 {

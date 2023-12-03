@@ -6,13 +6,13 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 12:20:07 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 19:52:45 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:53:10 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "headers.h"
 
-int		length(long nb)
+int	length(long nb)
 {
 	int	length;
 
@@ -39,7 +39,9 @@ char	*ft_itoa(int nb)
 	n = nb;
 	i = length(n);
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+	{
 		return (0);
+	}
 	str[i--] = '\0';
 	if (n == 0)
 	{

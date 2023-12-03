@@ -6,25 +6,25 @@
 /*   By: cleblond <cleblond@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 13:22:03 by chanus            #+#    #+#             */
-/*   Updated: 2023/12/03 20:02:28 by cleblond         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:51:03 by cleblond         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strsame.h"
-#include "ft_putchar.h"
-#include "ft_putstr.h"
-#include "ft_atoi.h"
-#include "ft_itoa.h"
-#include "ft_count_digits.h"
-#include "ft_get_charnum.h"
-#include "ft_strlen.h"
+#ifndef FT_HANDLE_RECORD_H
+# define FT_HANDLE_RECORD_H
 
-#ifndef FT_HANDLE_RECORD
-#define FT_HANDLE_RECORD
+# include "ft_strsame.h"
+# include "ft_putchar.h"
+# include "ft_putstr.h"
+# include "ft_atoi.h"
+# include "ft_itoa.h"
+# include "ft_count_digits.h"
+# include "ft_get_charnum.h"
+# include "ft_strlen.h"
 
 static int	search_record(char ***dictionary, char *n_record);
 
-int		get_num(char s)
+int	get_num(char s)
 {
 	return (s - 48);
 }
@@ -143,6 +143,7 @@ char	*m_input(char *data, int *t)
 static int	search_record(char ***dictionary, char *n_record)
 {
 	int	record;
+
 	record = 0;
 	while (record < 50)
 	{
@@ -182,6 +183,6 @@ void	ft_handle_record(char ***dictionary, char *str_num)
 		num_order = get_num_order(t);
 		resolve_group(chunk, num_order, dictionary);
 		free(num_order);
-		}
+	}
 }
 #endif
